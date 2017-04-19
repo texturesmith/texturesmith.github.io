@@ -1,0 +1,364 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Texture Smith Docs\n\n\nTexture Smith is an evolving texture creation program built for \nUnity\n that can create multiple textures (i.e PBR) at once, fast enought for runtime.\n\n\nFeatures\n\n\n\n\nFast enough for real time use. (Depending on texture size + count.)\n\n\nMultiple intuitive painting techiques like \nprojection or uv\n.\n\n\nMaterial agnostic. Can create textures for whatever you need.\n\n\nHeightblending. (Optional.)\n\n\nBuilt in \nProceduralMaterial support\n.\n\n\nBuilt in \nTextMesh Pro support\n.\n\n\nOptimization options, to get things running as fast as possible.\n\n\nUse as many brushes as you want.\n\n\n\n\nPotential Uses\n\n\n\n\nCharacter creation systems.\n\n\nPainting programs/art asset development.\n\n\nProcedural texture generation.\n\n\nBlood, dirt, explosion effects.\n\n\n\n\nCaution\n\n\nThe techniques wont work as well if your mesh shares uvs. For instance every face of the built in Unity cube has the same uvs, so you would only be able to paint to one face.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#texture-smith-docs", 
+            "text": "Texture Smith is an evolving texture creation program built for  Unity  that can create multiple textures (i.e PBR) at once, fast enought for runtime.", 
+            "title": "Texture Smith Docs"
+        }, 
+        {
+            "location": "/#features", 
+            "text": "Fast enough for real time use. (Depending on texture size + count.)  Multiple intuitive painting techiques like  projection or uv .  Material agnostic. Can create textures for whatever you need.  Heightblending. (Optional.)  Built in  ProceduralMaterial support .  Built in  TextMesh Pro support .  Optimization options, to get things running as fast as possible.  Use as many brushes as you want.", 
+            "title": "Features"
+        }, 
+        {
+            "location": "/#potential-uses", 
+            "text": "Character creation systems.  Painting programs/art asset development.  Procedural texture generation.  Blood, dirt, explosion effects.", 
+            "title": "Potential Uses"
+        }, 
+        {
+            "location": "/#caution", 
+            "text": "The techniques wont work as well if your mesh shares uvs. For instance every face of the built in Unity cube has the same uvs, so you would only be able to paint to one face.", 
+            "title": "Caution"
+        }, 
+        {
+            "location": "/gettingstarted/", 
+            "text": "Getting started\n\n\nOverview\n\n\nThe two main components of Texture Smith are the Baker and the Brush. The Baker manages a canvas for each child mesh you want to paint to. It creates a single set of textures based on the brushes painting to it. Then it applies them to the meshes materials. Brushes can paint to as few or as many Bakers as needed.\n\n\nA GameObject may need multiple Bakers if you want to create multiple texture sets. This will be covered in \nhere\n.\n\n\nThe Baker\n\n\nFirst, add a Baker component to the parent GameObject of the meshes you want to paint to. If your GameObject or scene is going to have more than one Baker, you might want to enter a unique name in the components name field.\n\n\n\nTargets\n\n\nOpen the Targets tab. It will list all child meshes. Select the ones you want to paint to that share a set of textures. Typically submeshes will all share the same textures. It doesn't matter if they don't share the same materials.\n\n\nWhen you select one it will list the submeshes. The initial names will be based off of their materials. Since the submeshes I'm using share a material i'll have to manually enter some names. (This isn't necessary, but makes future tasks easier.)\n\n\nClick 'Select' to go to the meshes GameObject and in the RendererData component, enter some names. You may need to Toggle Visibility to figure out which mesh is which.\n\n\nAnd head back to the Baker component. Much better. Now select the submeshes you want to be paintable.\n\n\nMuch better. Now select the submeshes you want to paint to. You will get a list of textures used by it's material. To the right of their name is a drop down with texture usage types. Texture Smith will try to automatically asign these, but you might need to change them.\n\n\nSince all these submeshes use the same material you only have to select the textures for one of them. I just want to paint the Albedo, Normal Map, and Metal map. I didn't select the Eyes submesh, so it won't be painted to.\n\n\n\nOutputs\n\n\nClose the Targets tab and open the Outputs tab. This lists the textures we will be outputing. Texture Smith will automatically set this up if you did the first step properly, so you can probably skip this section. For an indepth overview click \nhere\n.\n\n\nThe usage type must correspond to the texture usage type you set in the Targets section.\n\n\nThe default post processing will fix edge seams. The normal map post processing also packs textures for the standard shader, so make sure it is enabled.\n\n\n\nIgnore the other tabs for now. For in depth info on the Baker go \nhere\n.\n\n\nCreating a Brush\n\n\nCreate a new GameObject and add the Brush component. Open the Render To tab for a list of Bakers. Select a Baker for a list of submeshes.\nFor this Brush I only want to paint to the skin.\n\n\nIgnore the Advanced Settings tab for now. First we need some textures. Brush Texture components start with BT_. Add BT_Default to your Brush.\nNow click Add Texture for as many usages as you need. I want to paint to the BaseColor, the Normal, and the Metal. Then setup the textures.\nNext, aim the brush where you want it to paint, and resize it.\n\n\nIn the scene view GUI, click Bake to see results. Hit Revert to go bake to the original textures.\n\n\n\nEnable Preview Mode\n\n\nHaving to Bake every time to see your changes is tedious. Select the Baker component and in Advanced Settings click the Preview Mode button.\n\n\nNow add the AutoUpdatePreview component to your Brush, to have it update the preview any time it moves, rotates, or resizes.\n\n\nThe preview can only show one usage type at a time. You can select which one in the scene view GUI drop down.\n\n\n\nConclusion\n\n\nWith just a few tweaks of the \nBrush settings\n we can get neat results very fast.", 
+            "title": "Getting Started"
+        }, 
+        {
+            "location": "/gettingstarted/#getting-started", 
+            "text": "", 
+            "title": "Getting started"
+        }, 
+        {
+            "location": "/gettingstarted/#overview", 
+            "text": "The two main components of Texture Smith are the Baker and the Brush. The Baker manages a canvas for each child mesh you want to paint to. It creates a single set of textures based on the brushes painting to it. Then it applies them to the meshes materials. Brushes can paint to as few or as many Bakers as needed.  A GameObject may need multiple Bakers if you want to create multiple texture sets. This will be covered in  here .", 
+            "title": "Overview"
+        }, 
+        {
+            "location": "/gettingstarted/#the-baker", 
+            "text": "First, add a Baker component to the parent GameObject of the meshes you want to paint to. If your GameObject or scene is going to have more than one Baker, you might want to enter a unique name in the components name field.", 
+            "title": "The Baker"
+        }, 
+        {
+            "location": "/gettingstarted/#targets", 
+            "text": "Open the Targets tab. It will list all child meshes. Select the ones you want to paint to that share a set of textures. Typically submeshes will all share the same textures. It doesn't matter if they don't share the same materials.  When you select one it will list the submeshes. The initial names will be based off of their materials. Since the submeshes I'm using share a material i'll have to manually enter some names. (This isn't necessary, but makes future tasks easier.) \nClick 'Select' to go to the meshes GameObject and in the RendererData component, enter some names. You may need to Toggle Visibility to figure out which mesh is which. \nAnd head back to the Baker component. Much better. Now select the submeshes you want to be paintable. \nMuch better. Now select the submeshes you want to paint to. You will get a list of textures used by it's material. To the right of their name is a drop down with texture usage types. Texture Smith will try to automatically asign these, but you might need to change them.  Since all these submeshes use the same material you only have to select the textures for one of them. I just want to paint the Albedo, Normal Map, and Metal map. I didn't select the Eyes submesh, so it won't be painted to.", 
+            "title": "Targets"
+        }, 
+        {
+            "location": "/gettingstarted/#outputs", 
+            "text": "Close the Targets tab and open the Outputs tab. This lists the textures we will be outputing. Texture Smith will automatically set this up if you did the first step properly, so you can probably skip this section. For an indepth overview click  here .  The usage type must correspond to the texture usage type you set in the Targets section.  The default post processing will fix edge seams. The normal map post processing also packs textures for the standard shader, so make sure it is enabled.  Ignore the other tabs for now. For in depth info on the Baker go  here .", 
+            "title": "Outputs"
+        }, 
+        {
+            "location": "/gettingstarted/#creating-a-brush", 
+            "text": "Create a new GameObject and add the Brush component. Open the Render To tab for a list of Bakers. Select a Baker for a list of submeshes.\nFor this Brush I only want to paint to the skin. \nIgnore the Advanced Settings tab for now. First we need some textures. Brush Texture components start with BT_. Add BT_Default to your Brush.\nNow click Add Texture for as many usages as you need. I want to paint to the BaseColor, the Normal, and the Metal. Then setup the textures.\nNext, aim the brush where you want it to paint, and resize it. \nIn the scene view GUI, click Bake to see results. Hit Revert to go bake to the original textures.", 
+            "title": "Creating a Brush"
+        }, 
+        {
+            "location": "/gettingstarted/#enable-preview-mode", 
+            "text": "Having to Bake every time to see your changes is tedious. Select the Baker component and in Advanced Settings click the Preview Mode button.  Now add the AutoUpdatePreview component to your Brush, to have it update the preview any time it moves, rotates, or resizes.  The preview can only show one usage type at a time. You can select which one in the scene view GUI drop down.", 
+            "title": "Enable Preview Mode"
+        }, 
+        {
+            "location": "/gettingstarted/#conclusion", 
+            "text": "With just a few tweaks of the  Brush settings  we can get neat results very fast.", 
+            "title": "Conclusion"
+        }, 
+        {
+            "location": "/baker/", 
+            "text": "Targets\n\n\nThe meshes you want to target, and the textures that will be modified.\nGet started \nhere\n.\n\n\nOutputs\n\n\nThese are the textures that will be created or updated when Bake is called.\nTo add one, open the outputs panel and in the top right select Add Output.\nWhen you select to target a texture in the Target panel, it will automatically add an output if one doesn't already exist.\n\n\n\nBaking API\n\n\n// Will bake anything that is enabled.\nBakeAll();\n\n// To bake some.\nBake(UsageType.BaseColor, UsageType.Normal, UsageType.Metal);\n\n\n\n\nOutput API\n\n\nvar o = GetOutput(UsageType.BaseColor);\n\n// If baker calls BakeAll, it will check this first.\no.enabled = true;\n\n// Set a custom texture size.\n// The smaller the faster it will be to generate.\n// If you wanted to show live updates, you might set this low while the user is modifying things, then set it high when they are done.\no.customSize = true;\no.size = PowersOf2.p512;\n\n// Change post processing.\n// The default post processing fixes edge seams, and packs normals.\no.postProcessingEnabled = true;\no.postProcessing = Resource.Load\nMaterial\n(\nTexture Smith/Materials/PP Default\n);\n\n// The input texture.\no.texture = Resources.Load\nTexture\n(\nTextures BaseColor\n);\n// You can also call:\nGetInputTex(UsageType.BaseColor);\n\n// The output texture. You shouldn't ever change this.\nvar rt = o.outputTexture;\n// You can also just call:\nGetOutputTex(UsageType.BaseColor);\n// Since it's a renderTexture, if you want to be able to read it just call:\nvar tex2D = o.outputTexture.ToTexture2D();\n\n\n\n\n\nAdvanced Settings\n\n\nRegion\n\n\nRegions are used to speed up baking very large textures. When a region is selected, only that area of the textures will be updated when Bake is called. This might not provide much of an advantage if your textures are small or you are only creating a few at a time. But if you are creating lots of 4k+ textures, it can save time.\n\n\nEditing Regions\n\n\nClick Add Region then click Edit to bring up the Region Editor.\n\n\nTop Sliders\n\n\n\n\nGray:\n Renders the area out of bounds as dark gray, so it's easier to see the region.\n\n\nNib:\n Edge nib size. Larger = easier to grab, smaller = easier to see what your doing.\n\n\n\n\nControls\n\n\n\n\nMouse Wheel Click:\n Grab the workspace.\n\n\nMouse Wheel Zoom:\n Zoom in and out.\n\n\nLeft Click:\n Grab an edge nib or the full bounds.\n\n\nMouse Move:\n Move the workspace or edge nib.\n\n\n\n\nIdeally you should set a name for the region.\n\n\nUsing regions.\n\n\nYou must click Use to start using a region.\n\n\nClick Use Full to use the full region.\n\n\nIn script:\n\n\n// Set to region.\nSetRegion(regionName);\n\n// Reset.\nSetRegion();\n\n\n\n\nFlipV\n\n\nFlips the textures upside down. This will likely be removed and done internally.\n\n\nWrapUV\n\n\nYou can most likely leave this off and forget about it. I had one strange instance where someones mesh had uvs outside the 0-1 range. For rare instances like that, this will wrap the uv.\n\n\nHeight Blending\n\n\nEnable height blending. The Baker normally paints 14 brushes at a time, so if there are more than 14 brushes it will have to do multiple passes. With height blending enabled it can only render 6 brushes at a time, so may be slower if you are using lots of brushes at once.\n\n\nClear Before Bake\n\n\nClears outputs before each bake. Disable it to preserve textures.\nI'll soon add an option to do this per output.\n\n\nAlways Bake\n\n\nWill call Bake every update tick. Not ideal for large textures or if creating lots of textures.", 
+            "title": "Baker"
+        }, 
+        {
+            "location": "/baker/#targets", 
+            "text": "The meshes you want to target, and the textures that will be modified.\nGet started  here .", 
+            "title": "Targets"
+        }, 
+        {
+            "location": "/baker/#outputs", 
+            "text": "These are the textures that will be created or updated when Bake is called.\nTo add one, open the outputs panel and in the top right select Add Output.\nWhen you select to target a texture in the Target panel, it will automatically add an output if one doesn't already exist.", 
+            "title": "Outputs"
+        }, 
+        {
+            "location": "/baker/#baking-api", 
+            "text": "// Will bake anything that is enabled.\nBakeAll();\n\n// To bake some.\nBake(UsageType.BaseColor, UsageType.Normal, UsageType.Metal);", 
+            "title": "Baking API"
+        }, 
+        {
+            "location": "/baker/#output-api", 
+            "text": "var o = GetOutput(UsageType.BaseColor);\n\n// If baker calls BakeAll, it will check this first.\no.enabled = true;\n\n// Set a custom texture size.\n// The smaller the faster it will be to generate.\n// If you wanted to show live updates, you might set this low while the user is modifying things, then set it high when they are done.\no.customSize = true;\no.size = PowersOf2.p512;\n\n// Change post processing.\n// The default post processing fixes edge seams, and packs normals.\no.postProcessingEnabled = true;\no.postProcessing = Resource.Load Material ( Texture Smith/Materials/PP Default );\n\n// The input texture.\no.texture = Resources.Load Texture ( Textures BaseColor );\n// You can also call:\nGetInputTex(UsageType.BaseColor);\n\n// The output texture. You shouldn't ever change this.\nvar rt = o.outputTexture;\n// You can also just call:\nGetOutputTex(UsageType.BaseColor);\n// Since it's a renderTexture, if you want to be able to read it just call:\nvar tex2D = o.outputTexture.ToTexture2D();", 
+            "title": "Output API"
+        }, 
+        {
+            "location": "/baker/#advanced-settings", 
+            "text": "", 
+            "title": "Advanced Settings"
+        }, 
+        {
+            "location": "/baker/#region", 
+            "text": "Regions are used to speed up baking very large textures. When a region is selected, only that area of the textures will be updated when Bake is called. This might not provide much of an advantage if your textures are small or you are only creating a few at a time. But if you are creating lots of 4k+ textures, it can save time.", 
+            "title": "Region"
+        }, 
+        {
+            "location": "/baker/#editing-regions", 
+            "text": "Click Add Region then click Edit to bring up the Region Editor.", 
+            "title": "Editing Regions"
+        }, 
+        {
+            "location": "/baker/#top-sliders", 
+            "text": "Gray:  Renders the area out of bounds as dark gray, so it's easier to see the region.  Nib:  Edge nib size. Larger = easier to grab, smaller = easier to see what your doing.", 
+            "title": "Top Sliders"
+        }, 
+        {
+            "location": "/baker/#controls", 
+            "text": "Mouse Wheel Click:  Grab the workspace.  Mouse Wheel Zoom:  Zoom in and out.  Left Click:  Grab an edge nib or the full bounds.  Mouse Move:  Move the workspace or edge nib.   Ideally you should set a name for the region.", 
+            "title": "Controls"
+        }, 
+        {
+            "location": "/baker/#using-regions", 
+            "text": "You must click Use to start using a region.  Click Use Full to use the full region.  In script:  // Set to region.\nSetRegion(regionName);\n\n// Reset.\nSetRegion();", 
+            "title": "Using regions."
+        }, 
+        {
+            "location": "/baker/#flipv", 
+            "text": "Flips the textures upside down. This will likely be removed and done internally.", 
+            "title": "FlipV"
+        }, 
+        {
+            "location": "/baker/#wrapuv", 
+            "text": "You can most likely leave this off and forget about it. I had one strange instance where someones mesh had uvs outside the 0-1 range. For rare instances like that, this will wrap the uv.", 
+            "title": "WrapUV"
+        }, 
+        {
+            "location": "/baker/#height-blending", 
+            "text": "Enable height blending. The Baker normally paints 14 brushes at a time, so if there are more than 14 brushes it will have to do multiple passes. With height blending enabled it can only render 6 brushes at a time, so may be slower if you are using lots of brushes at once.", 
+            "title": "Height Blending"
+        }, 
+        {
+            "location": "/baker/#clear-before-bake", 
+            "text": "Clears outputs before each bake. Disable it to preserve textures.\nI'll soon add an option to do this per output.", 
+            "title": "Clear Before Bake"
+        }, 
+        {
+            "location": "/baker/#always-bake", 
+            "text": "Will call Bake every update tick. Not ideal for large textures or if creating lots of textures.", 
+            "title": "Always Bake"
+        }, 
+        {
+            "location": "/brush/", 
+            "text": "Texture Settings\n\n\nCheck \nhere\n to see which usages Texture Smith has the most support for.\n\n\nBaseColor\n\n\n\n\nTint \n Alpha:\n Modify the colors/alpha.\n\n\nMultiply RGB:\n Blend RGB with underlying color.\n\n\nMultiply A:\n Blend alpha with underlying alpha. Good for semi transparent textures.\n\n\n\n\nNormal\n\n\n\n\nRotation Mode:\n\n\nAuto (default):\n Automatically rotates normals based on brush rotation.\n\n\nStatic:\n No rotation.\n\n\n\n\n\n\nRotation:\n An offset.\n\n\nInvert (Button):\n Adds PI to the current normal rotation. Gives an 'inverted' effect.\n\n\nStrength:\n Increase the normal power.\n\n\nBlend:\n How much to blend with underlying normals.\n\n\n\n\nMetal\n\n\n\n\nMetallic:\n How metallic (reflective) the surface is.\n\n\nMetallic Blend:\n How much to blend with underlying metallic.\n\n\nSmoothness:\n The glossiness/roughness.\n\n\nSmoothness Blend:\n How much to blend with underlying smoothnrdd.\n\n\n\n\nHeight\n\n\n\n\nOffset:\n Increases or decreases the height.\n\n\nDepth:\n How it blends with the underlying height.\n\n\n\n\nAdvanced Settings\n\n\n\n\nPriority:\n Brushes are sorted on this before baking, so you can use it to render a Brush below/above others.\n\n\nMethod:\n How the texture is painted.\n\n\nProjection (default):\n Works like an orthographic projector in Unity. Just aim and size.\n\n\nUV:\n Select a UV boundary to paint in. More info \nhere\n.\n\n\nDistance:\n Paints based on distance to mesh.\n\n\n\n\n\n\nSpace:\n The UV Space.\n\n\nBrush (default):\n Based on brush position and scale.\n\n\nWorld:\n Based on world position of brush.\n\n\nVertex:\n Based on position of vertex. (Good for painting.)\n\n\nUV:\n Uses meshes UV. (Good for creating eraser effects.)\n\n\n\n\n\n\nRoundness:\n Rounds corners of the brush.\n\n\n\n\nFade\n\n\n\n\nEdge Fade: Fades out the edges of the brush.\n\n\nDepth Fade: Fade based on distance from brush.\n\n\nMax Angle: Use mesh normals and brush rotation to clamp to a specific angle. Good for creating dust/snow effects.\n\n\nAngle Fade: Fade based on angle of normal from brush.\n\n\n\n\nRotation\n\n\nAn offset to the brush's rotation. Mostly added for when working with the UV Method.\n\n\nTile \n Offset\n\n\nTexture Smith will ignore a textures built in wrap mode and does it manually.\n\n\n\n\nWrap Mode:\n\n\nClamp:\n Clamp.\n\n\nRepeat (default):\n Tile effect.\n\n\nMirror:\n Mirrors the tile every 2nd time.\n\n\n\n\n\n\n\n\nWarp (Experimental)\n\n\nSettings for pinching and warping the UV. Primarilly designed for Brush Space with the Projection Method.", 
+            "title": "Brush"
+        }, 
+        {
+            "location": "/brush/#texture-settings", 
+            "text": "Check  here  to see which usages Texture Smith has the most support for.", 
+            "title": "Texture Settings"
+        }, 
+        {
+            "location": "/brush/#basecolor", 
+            "text": "Tint   Alpha:  Modify the colors/alpha.  Multiply RGB:  Blend RGB with underlying color.  Multiply A:  Blend alpha with underlying alpha. Good for semi transparent textures.", 
+            "title": "BaseColor"
+        }, 
+        {
+            "location": "/brush/#normal", 
+            "text": "Rotation Mode:  Auto (default):  Automatically rotates normals based on brush rotation.  Static:  No rotation.    Rotation:  An offset.  Invert (Button):  Adds PI to the current normal rotation. Gives an 'inverted' effect.  Strength:  Increase the normal power.  Blend:  How much to blend with underlying normals.", 
+            "title": "Normal"
+        }, 
+        {
+            "location": "/brush/#metal", 
+            "text": "Metallic:  How metallic (reflective) the surface is.  Metallic Blend:  How much to blend with underlying metallic.  Smoothness:  The glossiness/roughness.  Smoothness Blend:  How much to blend with underlying smoothnrdd.", 
+            "title": "Metal"
+        }, 
+        {
+            "location": "/brush/#height", 
+            "text": "Offset:  Increases or decreases the height.  Depth:  How it blends with the underlying height.", 
+            "title": "Height"
+        }, 
+        {
+            "location": "/brush/#advanced-settings", 
+            "text": "Priority:  Brushes are sorted on this before baking, so you can use it to render a Brush below/above others.  Method:  How the texture is painted.  Projection (default):  Works like an orthographic projector in Unity. Just aim and size.  UV:  Select a UV boundary to paint in. More info  here .  Distance:  Paints based on distance to mesh.    Space:  The UV Space.  Brush (default):  Based on brush position and scale.  World:  Based on world position of brush.  Vertex:  Based on position of vertex. (Good for painting.)  UV:  Uses meshes UV. (Good for creating eraser effects.)    Roundness:  Rounds corners of the brush.", 
+            "title": "Advanced Settings"
+        }, 
+        {
+            "location": "/brush/#fade", 
+            "text": "Edge Fade: Fades out the edges of the brush.  Depth Fade: Fade based on distance from brush.  Max Angle: Use mesh normals and brush rotation to clamp to a specific angle. Good for creating dust/snow effects.  Angle Fade: Fade based on angle of normal from brush.", 
+            "title": "Fade"
+        }, 
+        {
+            "location": "/brush/#rotation", 
+            "text": "An offset to the brush's rotation. Mostly added for when working with the UV Method.", 
+            "title": "Rotation"
+        }, 
+        {
+            "location": "/brush/#tile-offset", 
+            "text": "Texture Smith will ignore a textures built in wrap mode and does it manually.   Wrap Mode:  Clamp:  Clamp.  Repeat (default):  Tile effect.  Mirror:  Mirrors the tile every 2nd time.", 
+            "title": "Tile &amp; Offset"
+        }, 
+        {
+            "location": "/brush/#warp-experimental", 
+            "text": "Settings for pinching and warping the UV. Primarilly designed for Brush Space with the Projection Method.", 
+            "title": "Warp (Experimental)"
+        }, 
+        {
+            "location": "/brushtextures/", 
+            "text": "Brush Textures\n\n\nThere are a number of way to get textures for the brush, including using Procedural Materials and TextMesh Pro text.\n\n\nBrush API\n\n\n// If a brush has multiple styles, these methods will cycle through them.\nbrush.NextStyle();\nbrush.PreviousStyle();\n\n// If there is a style with this name it will be set.\nbrush.SetStyle(styleName);\n\n\n\n\nBT_Default\n\n\nExplained in \ngetting started\n.\nJust click Add Texture and drop in your textures.\nMake sure they are marked for the appropriate usage.\n\n\nBT_Gradient\n\n\nCreates gradient textures. Very simple but it has a lot of uses, for instance, quickly generating textures. Or fake shadows.\n\n\n\nvar g = GetComponent\nBT_Gradient\n();\n\n// Set the gradient.\ng.SetGradient(gradient, radial);\n\n\n\n\nBT_ProcMat\n\n\nDesigned for Procedural Materials which I wrap in \nProcMat\n.\n\n\nThe brush will use the textures directly from the ProceduralMaterial, unless you choose to store them.\n\n\nClick RenderTexture to create copies of the procedural textures. Now you can have 2 brushes sharing the same ProceduralMaterial but still using different textures.\n\n\nClick Texture2D to create copies as texture2D. This is better when you are working in editor since Unity will wipe RenderTextures if you do things like save your scene or resize the inspector editor.\n\n\nDuring runtime it's probably better to store as RenderTexture since it's faster to copy to.\n\n\nvar pm = GetComponent\nBT_ProcMat\n();\n\n// List all property names.\nforeach(var name in pm.procMat.names)\n    Debug.Log(name);\n\n// You can modify procMat properties like:\npm[\n$randomseed\n].asFloat = Random.value * 100f;\n// ProceduralMaterial seed and output size have easy access variables.\npm.procMat.seed = Random.value * 100f;\npm.procMat.size = PowersOf2.p256;\n// To rebuild asynchonously:\npm.procMat.RebuildTextures();\n// Or instantly.\npm.procMat.RebuildTextures(true);\n\n\n\n\nBT_Share\n\n\nThis just uses the textures from another brush. So it saves on texture memory but you can still customize it with the regular brush options, like tint, alpha, offset.\n\n\nBT_TextureSet\n\n\nThis takes one or more \nTextureSet\ns.\n\n\nBT_Text (Requires TextMesh Pro)\n\n\nLets you create brushes from text. Use it to generate sports jersey names at runtime, or license plate numbers, or use dingbat fonts for easy tattoos, splats, signs. It's really fun to play around with. TMPros filter effects like glow \n bevel work great too.\n\n\n\nTextMesh Pro is free now, and Unity will be officially supporting it soon.\n\n\nSetup\n\n\n\n\nInstall TextMesh Pro.\n\n\nGo to \nEditor \n Project Settings \n Player\n and in \nScript Define Symbols\n add \nTEXTMESHPRO\n.\n\n\nCreate a brush and add the BT_Text component and a TextMesh Pro component.\n\n\nEnter some text.\n\n\nSet the resolution (the width of the texture) higher = better quality = more memory.\n\n\nHit \nGenerate\n.\n\n\n\n\nAPI\n\n\nvar t = GetComponent\nBT_Text\n();\n\n// To set text.\nt.SetText(\nyour text\n);", 
+            "title": "Brush Textures"
+        }, 
+        {
+            "location": "/brushtextures/#brush-textures", 
+            "text": "There are a number of way to get textures for the brush, including using Procedural Materials and TextMesh Pro text.", 
+            "title": "Brush Textures"
+        }, 
+        {
+            "location": "/brushtextures/#brush-api", 
+            "text": "// If a brush has multiple styles, these methods will cycle through them.\nbrush.NextStyle();\nbrush.PreviousStyle();\n\n// If there is a style with this name it will be set.\nbrush.SetStyle(styleName);", 
+            "title": "Brush API"
+        }, 
+        {
+            "location": "/brushtextures/#bt_default", 
+            "text": "Explained in  getting started .\nJust click Add Texture and drop in your textures.\nMake sure they are marked for the appropriate usage.", 
+            "title": "BT_Default"
+        }, 
+        {
+            "location": "/brushtextures/#bt_gradient", 
+            "text": "Creates gradient textures. Very simple but it has a lot of uses, for instance, quickly generating textures. Or fake shadows.  var g = GetComponent BT_Gradient ();\n\n// Set the gradient.\ng.SetGradient(gradient, radial);", 
+            "title": "BT_Gradient"
+        }, 
+        {
+            "location": "/brushtextures/#bt_procmat", 
+            "text": "Designed for Procedural Materials which I wrap in  ProcMat .  The brush will use the textures directly from the ProceduralMaterial, unless you choose to store them.  Click RenderTexture to create copies of the procedural textures. Now you can have 2 brushes sharing the same ProceduralMaterial but still using different textures.  Click Texture2D to create copies as texture2D. This is better when you are working in editor since Unity will wipe RenderTextures if you do things like save your scene or resize the inspector editor.  During runtime it's probably better to store as RenderTexture since it's faster to copy to.  var pm = GetComponent BT_ProcMat ();\n\n// List all property names.\nforeach(var name in pm.procMat.names)\n    Debug.Log(name);\n\n// You can modify procMat properties like:\npm[ $randomseed ].asFloat = Random.value * 100f;\n// ProceduralMaterial seed and output size have easy access variables.\npm.procMat.seed = Random.value * 100f;\npm.procMat.size = PowersOf2.p256;\n// To rebuild asynchonously:\npm.procMat.RebuildTextures();\n// Or instantly.\npm.procMat.RebuildTextures(true);", 
+            "title": "BT_ProcMat"
+        }, 
+        {
+            "location": "/brushtextures/#bt_share", 
+            "text": "This just uses the textures from another brush. So it saves on texture memory but you can still customize it with the regular brush options, like tint, alpha, offset.", 
+            "title": "BT_Share"
+        }, 
+        {
+            "location": "/brushtextures/#bt_textureset", 
+            "text": "This takes one or more  TextureSet s.", 
+            "title": "BT_TextureSet"
+        }, 
+        {
+            "location": "/brushtextures/#bt_text-requires-textmesh-pro", 
+            "text": "Lets you create brushes from text. Use it to generate sports jersey names at runtime, or license plate numbers, or use dingbat fonts for easy tattoos, splats, signs. It's really fun to play around with. TMPros filter effects like glow   bevel work great too.  TextMesh Pro is free now, and Unity will be officially supporting it soon.", 
+            "title": "BT_Text (Requires TextMesh Pro)"
+        }, 
+        {
+            "location": "/brushtextures/#setup", 
+            "text": "Install TextMesh Pro.  Go to  Editor   Project Settings   Player  and in  Script Define Symbols  add  TEXTMESHPRO .  Create a brush and add the BT_Text component and a TextMesh Pro component.  Enter some text.  Set the resolution (the width of the texture) higher = better quality = more memory.  Hit  Generate .", 
+            "title": "Setup"
+        }, 
+        {
+            "location": "/brushtextures/#api", 
+            "text": "var t = GetComponent BT_Text ();\n\n// To set text.\nt.SetText( your text );", 
+            "title": "API"
+        }, 
+        {
+            "location": "/components/", 
+            "text": "Baker Cache\n\n\nThe BakerCache component aims to save and load raw baker outputs as fast as possible. The most common potential use would be for an undo/redo system.\n\n\nSetup\n\n\n\n\nSet an export path where data can be saved.\n\n\nPopulate the bakers list.\n\n\n\n\n// Save the current state of all bakers output textures.\nSave(cacheName);\n\n// Load a cache to all bakers.\nLoad(cacheName);\n\n// Delete a cache.\nDelete(cacheName);\n// or\nDeletAll();\n\n// Temporary textures are kept around to speed up cacheing lots of files.\n// Call this after Save/Load, or when you wont be calling Save/Load any more.\nClearTempTextures();", 
+            "title": "Components"
+        }, 
+        {
+            "location": "/components/#baker-cache", 
+            "text": "The BakerCache component aims to save and load raw baker outputs as fast as possible. The most common potential use would be for an undo/redo system.", 
+            "title": "Baker Cache"
+        }, 
+        {
+            "location": "/components/#setup", 
+            "text": "Set an export path where data can be saved.  Populate the bakers list.   // Save the current state of all bakers output textures.\nSave(cacheName);\n\n// Load a cache to all bakers.\nLoad(cacheName);\n\n// Delete a cache.\nDelete(cacheName);\n// or\nDeletAll();\n\n// Temporary textures are kept around to speed up cacheing lots of files.\n// Call this after Save/Load, or when you wont be calling Save/Load any more.\nClearTempTextures();", 
+            "title": "Setup"
+        }, 
+        {
+            "location": "/usages/", 
+            "text": "Texture Uses\n\n\nTextures are asigned a use so that the processing shaders know how to treat them. Some uses are more supported than others, but I'm working on getting support for as many different textures as I can.\n\n\nMost support\n\n\nBaseColor\n\n\nUsed for albedo, diffuse, or any kind of effects.\n\n\nSupported\n\n\nNormal\n\n\nNormals maps have a lot of tricks to work around. Currently Texture Smith requires packed Normal textures. They are unpacked for painting and then repacked in post processing. If your shader does not need packed normals, it is easy to disable this in post processing. When textures are saved to file they are first unpacked, so that Unity can use it's platform specific packing when you mark it as a Normal map.\n\n\nWhen blending normal maps, it's best to use the Height Blending option in the baker, and make sure your brush has a height texture.\n\n\nMetal\n\n\nMetal maps are largely supported, but there may be kinks in the way they are blended together.\n\n\nHeightmaps\n\n\n(Working on this.)\n\n\nSemi-supported\n\n\nSpecular\n\n\nMark it as a metal map, it will give decent results I think. (Working on this.)\n\n\nList of usage options\n\n\n\n\nBaseColor\n\n\nNormal\n\n\nMetal\n\n\nHeight\n\n\nSpecular\n\n\nOcclusion\n\n\nDetailMask\n\n\nEmissive\n\n\nOpacity\n\n\nRoughness\n\n\nSmoothness\n\n\nCustom1\n\n\nCustom2\n\n\nCustom3\n\n\nCustom4\n\n\nUnknown", 
+            "title": "Usages"
+        }, 
+        {
+            "location": "/usages/#texture-uses", 
+            "text": "Textures are asigned a use so that the processing shaders know how to treat them. Some uses are more supported than others, but I'm working on getting support for as many different textures as I can.", 
+            "title": "Texture Uses"
+        }, 
+        {
+            "location": "/usages/#most-support", 
+            "text": "", 
+            "title": "Most support"
+        }, 
+        {
+            "location": "/usages/#basecolor", 
+            "text": "Used for albedo, diffuse, or any kind of effects.", 
+            "title": "BaseColor"
+        }, 
+        {
+            "location": "/usages/#supported", 
+            "text": "", 
+            "title": "Supported"
+        }, 
+        {
+            "location": "/usages/#normal", 
+            "text": "Normals maps have a lot of tricks to work around. Currently Texture Smith requires packed Normal textures. They are unpacked for painting and then repacked in post processing. If your shader does not need packed normals, it is easy to disable this in post processing. When textures are saved to file they are first unpacked, so that Unity can use it's platform specific packing when you mark it as a Normal map.  When blending normal maps, it's best to use the Height Blending option in the baker, and make sure your brush has a height texture.", 
+            "title": "Normal"
+        }, 
+        {
+            "location": "/usages/#metal", 
+            "text": "Metal maps are largely supported, but there may be kinks in the way they are blended together.", 
+            "title": "Metal"
+        }, 
+        {
+            "location": "/usages/#heightmaps", 
+            "text": "(Working on this.)", 
+            "title": "Heightmaps"
+        }, 
+        {
+            "location": "/usages/#semi-supported", 
+            "text": "", 
+            "title": "Semi-supported"
+        }, 
+        {
+            "location": "/usages/#specular", 
+            "text": "Mark it as a metal map, it will give decent results I think. (Working on this.)", 
+            "title": "Specular"
+        }, 
+        {
+            "location": "/usages/#list-of-usage-options", 
+            "text": "BaseColor  Normal  Metal  Height  Specular  Occlusion  DetailMask  Emissive  Opacity  Roughness  Smoothness  Custom1  Custom2  Custom3  Custom4  Unknown", 
+            "title": "List of usage options"
+        }, 
+        {
+            "location": "/paintingmethods/", 
+            "text": "Projection Method\n\n\nThe projection method works the way a projector or directional light might, you point in the direction you want, adjust the size, and depth.\n\n\nUV Method\n\n\nAside from the default projection method, Brushes can be positioned by a UV boundary instead.\n\n\nIn the Brushes Advanced Settings, set Method to UV. The UVBounds editor should appear at the bottom of the inspector. If not click View UV Editor or make sure it isn't minimized.\n\n\n\n\nTop Sliders\n\n\n\n\nGray:\n Renders the area out of bounds as dark gray, so it's easier to see the region.\n\n\nNib:\n Edge nib size. Larger = easier to grab, smaller = easier to see what your doing.\n\n\n\n\nControls\n\n\n\n\nMouse Wheel Click:\n Grab the workspace.\n\n\nMouse Wheel Zoom:\n Zoom in and out.\n\n\nLeft Click:\n Grab an edge nib or the full bounds.\n\n\nMouse Move:\n Move the workspace or edge nib.\n\n\n\n\nSome Brush settings will be disabled but most wont be. The rotation and warp effects are especially useful when working with the UV method.\n\n\n\nDistance", 
+            "title": "Painting Methods"
+        }, 
+        {
+            "location": "/paintingmethods/#projection-method", 
+            "text": "The projection method works the way a projector or directional light might, you point in the direction you want, adjust the size, and depth.", 
+            "title": "Projection Method"
+        }, 
+        {
+            "location": "/paintingmethods/#uv-method", 
+            "text": "Aside from the default projection method, Brushes can be positioned by a UV boundary instead.  In the Brushes Advanced Settings, set Method to UV. The UVBounds editor should appear at the bottom of the inspector. If not click View UV Editor or make sure it isn't minimized.", 
+            "title": "UV Method"
+        }, 
+        {
+            "location": "/paintingmethods/#top-sliders", 
+            "text": "Gray:  Renders the area out of bounds as dark gray, so it's easier to see the region.  Nib:  Edge nib size. Larger = easier to grab, smaller = easier to see what your doing.", 
+            "title": "Top Sliders"
+        }, 
+        {
+            "location": "/paintingmethods/#controls", 
+            "text": "Mouse Wheel Click:  Grab the workspace.  Mouse Wheel Zoom:  Zoom in and out.  Left Click:  Grab an edge nib or the full bounds.  Mouse Move:  Move the workspace or edge nib.   Some Brush settings will be disabled but most wont be. The rotation and warp effects are especially useful when working with the UV method.", 
+            "title": "Controls"
+        }, 
+        {
+            "location": "/paintingmethods/#distance", 
+            "text": "", 
+            "title": "Distance"
+        }
+    ]
+}

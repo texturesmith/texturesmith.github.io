@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Brush Textures - Texture Smith Docs</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/highlight.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+	
+	<script src="../js/jquery-1.10.2.min.js"></script>
+        <script src="../js/bootstrap-3.0.3.min.js"></script>
+        <script src="../js/highlight.pack.js"></script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+
+        <!-- Collapsed navigation -->
+        <div class="navbar-header">
+            <!-- Expander button -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="..">Texture Smith Docs</a>
+        </div>
+
+        <!-- Expanded navigation -->
+        <div class="navbar-collapse collapse">
+                <!-- Main navigation -->
+                <ul class="nav navbar-nav">
+                    <li >
+                        <a href="..">Home</a>
+                    </li>
+                    <li >
+                        <a href="../gettingstarted/">Getting Started</a>
+                    </li>
+                    <li class="dropdown active">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Topics <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            
+<li >
+    <a href="../baker/">Baker</a>
+</li>
+                            
+<li >
+    <a href="../brush/">Brush</a>
+</li>
+                            
+<li class="active">
+    <a href="./">Brush Textures</a>
+</li>
+                            
+<li >
+    <a href="../components/">Components</a>
+</li>
+                            
+<li >
+    <a href="../usages/">Usages</a>
+</li>
+                            
+<li >
+    <a href="../paintingmethods/">Painting Methods</a>
+</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                        <i class="fa fa-search"></i> Search
+                    </a>
+                </li>
+                    <li >
+                        <a rel="next" href="../brush/">
+                            <i class="fa fa-arrow-left"></i> Previous
+                        </a>
+                    </li>
+                    <li >
+                        <a rel="prev" href="../components/">
+                            Next <i class="fa fa-arrow-right"></i>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#brush-textures">Brush Textures</a></li>
+            <li><a href="#brush-api">Brush API</a></li>
+            <li><a href="#bt_default">BT_Default</a></li>
+            <li><a href="#bt_gradient">BT_Gradient</a></li>
+            <li><a href="#bt_procmat">BT_ProcMat</a></li>
+            <li><a href="#bt_share">BT_Share</a></li>
+            <li><a href="#bt_textureset">BT_TextureSet</a></li>
+            <li><a href="#bt_text-requires-textmesh-pro">BT_Text (Requires TextMesh Pro)</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="brush-textures">Brush Textures</h1>
+<p>There are a number of way to get textures for the brush, including using Procedural Materials and TextMesh Pro text.</p>
+<h3 id="brush-api">Brush API</h3>
+<pre><code class="C#">// If a brush has multiple styles, these methods will cycle through them.
+brush.NextStyle();
+brush.PreviousStyle();
+
+// If there is a style with this name it will be set.
+brush.SetStyle(styleName);
+</code></pre>
+
+<h2 id="bt_default">BT_Default</h2>
+<p>Explained in <a href="../gettingstarted">getting started</a>.
+Just click Add Texture and drop in your textures.
+Make sure they are marked for the appropriate usage.</p>
+<h2 id="bt_gradient">BT_Gradient</h2>
+<p>Creates gradient textures. Very simple but it has a lot of uses, for instance, quickly generating textures. Or fake shadows.
+<img alt="Screenshot" src="../img/bt_gradient.png" /></p>
+<pre><code class="c#">var g = GetComponent&lt;BT_Gradient&gt;();
+
+// Set the gradient.
+g.SetGradient(gradient, radial);
+</code></pre>
+
+<h2 id="bt_procmat">BT_ProcMat</h2>
+<p>Designed for Procedural Materials which I wrap in <a href="../procmat">ProcMat</a>.</p>
+<p>The brush will use the textures directly from the ProceduralMaterial, unless you choose to store them.</p>
+<p>Click RenderTexture to create copies of the procedural textures. Now you can have 2 brushes sharing the same ProceduralMaterial but still using different textures.</p>
+<p>Click Texture2D to create copies as texture2D. This is better when you are working in editor since Unity will wipe RenderTextures if you do things like save your scene or resize the inspector editor.</p>
+<p>During runtime it's probably better to store as RenderTexture since it's faster to copy to.</p>
+<pre><code class="c#">var pm = GetComponent&lt;BT_ProcMat&gt;();
+
+// List all property names.
+foreach(var name in pm.procMat.names)
+    Debug.Log(name);
+
+// You can modify procMat properties like:
+pm[&quot;$randomseed&quot;].asFloat = Random.value * 100f;
+// ProceduralMaterial seed and output size have easy access variables.
+pm.procMat.seed = Random.value * 100f;
+pm.procMat.size = PowersOf2.p256;
+// To rebuild asynchonously:
+pm.procMat.RebuildTextures();
+// Or instantly.
+pm.procMat.RebuildTextures(true);
+</code></pre>
+
+<h2 id="bt_share">BT_Share</h2>
+<p>This just uses the textures from another brush. So it saves on texture memory but you can still customize it with the regular brush options, like tint, alpha, offset.</p>
+<h2 id="bt_textureset">BT_TextureSet</h2>
+<p>This takes one or more <a href="../textureset">TextureSet</a>s.</p>
+<h2 id="bt_text-requires-textmesh-pro">BT_Text (Requires TextMesh Pro)</h2>
+<p>Lets you create brushes from text. Use it to generate sports jersey names at runtime, or license plate numbers, or use dingbat fonts for easy tattoos, splats, signs. It's really fun to play around with. TMPros filter effects like glow &amp; bevel work great too.
+<img alt="Screenshot" src="../img/bt_text.png" /></p>
+<p>TextMesh Pro is free now, and Unity will be officially supporting it soon.</p>
+<h3 id="setup">Setup</h3>
+<ul>
+<li>Install TextMesh Pro.</li>
+<li>Go to <b>Editor &gt; Project Settings &gt; Player</b> and in <b>Script Define Symbols</b> add <b>TEXTMESHPRO</b>.</li>
+<li>Create a brush and add the BT_Text component and a TextMesh Pro component.</li>
+<li>Enter some text.</li>
+<li>Set the resolution (the width of the texture) higher = better quality = more memory.</li>
+<li>Hit <b>Generate</b>.</li>
+</ul>
+<h3 id="api">API</h3>
+<pre><code class="c#">var t = GetComponent&lt;BT_Text&gt;();
+
+// To set text.
+t.SetText(&quot;your text&quot;);
+</code></pre></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>var base_url = '..';</script>
+        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
+        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
