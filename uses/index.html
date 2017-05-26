@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Uses - Texture Smith Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Uses";
+    var mkdocs_page_input_path = "uses.md";
+    var mkdocs_page_url = "/uses/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Texture Smith Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../gettingstarted/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Topics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../baker/">Baker</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../brush/">Brush</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../outputs/">Outputs</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Uses</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#texture-uses">Texture Uses</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#most-support">Most support</a></li>
+        
+            <li><a class="toctree-l4" href="#supported">Supported</a></li>
+        
+            <li><a class="toctree-l4" href="#semi-supported">Semi-supported</a></li>
+        
+            <li><a class="toctree-l4" href="#list-of-usage-options">List of usage options</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Brushes</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../texturesettings/">Texture Settings</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uvsettings/">UV Settings</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../brushtextures/">BrushTextures</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../paintingmethods/">Painting Methods</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Texture Smith Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Topics &raquo;</li>
+        
+      
+    
+    <li>Uses</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="texture-uses">Texture Uses</h1>
+<p>Textures are asigned a use so that the processing shaders know how to treat them. Some uses are more supported than others, but I'm working on getting support for as many different textures as I can.</p>
+<h2 id="most-support">Most support</h2>
+<h4 id="basecolor">BaseColor</h4>
+<p>Used for albedo, diffuse, or any kind of effects.</p>
+<h2 id="supported">Supported</h2>
+<h4 id="normal">Normal</h4>
+<p>Normals maps have a lot of tricks to work around. Currently Texture Smith requires packed Normal textures. They are unpacked for painting and then repacked in post processing. If your shader does not need packed normals, it is easy to disable this in post processing. When textures are saved to file they are first unpacked, so that Unity can use it's platform specific packing when you mark it as a Normal map.</p>
+<p>When blending normal maps, it's best to use the Height Blending option in the baker, and make sure your brush has a height texture.</p>
+<h4 id="metal">Metal</h4>
+<p>Metal maps are largely supported, but there may be kinks in the way they are blended together.</p>
+<h4 id="heightmaps">Heightmaps</h4>
+<p>(Working on this.)</p>
+<h2 id="semi-supported">Semi-supported</h2>
+<h4 id="specular">Specular</h4>
+<p>Mark it as a metal map, it will give decent results I think. (Working on this.)</p>
+<h2 id="list-of-usage-options">List of usage options</h2>
+<ul>
+<li>BaseColor</li>
+<li>Normal</li>
+<li>Metal</li>
+<li>Height</li>
+<li>Specular</li>
+<li>Occlusion</li>
+<li>DetailMask</li>
+<li>Emissive</li>
+<li>Opacity</li>
+<li>Roughness</li>
+<li>Smoothness</li>
+<li>Custom1</li>
+<li>Custom2</li>
+<li>Custom3</li>
+<li>Custom4</li>
+<li>Unknown</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../texturesettings/" class="btn btn-neutral float-right" title="Texture Settings">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../outputs/" class="btn btn-neutral" title="Outputs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../outputs/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../texturesettings/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

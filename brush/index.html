@@ -1,228 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Brush - Texture Smith Docs</title>
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/highlight.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-	
-	<script src="../js/jquery-1.10.2.min.js"></script>
-        <script src="../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../js/highlight.pack.js"></script> 
-    </head>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Brush - Texture Smith Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-    <body>
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Brush";
+    var mkdocs_page_input_path = "brush.md";
+    var mkdocs_page_url = "/brush/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+<body class="wy-body-for-nav" role="document">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="..">Texture Smith Docs</a>
-        </div>
+  <div class="wy-grid-for-nav">
 
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="..">Home</a>
-                    </li>
-                    <li >
-                        <a href="../gettingstarted/">Getting Started</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Topics <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li >
-    <a href="../baker/">Baker</a>
-</li>
-                            
-<li class="active">
-    <a href="./">Brush</a>
-</li>
-                            
-<li >
-    <a href="../brushtextures/">Brush Textures</a>
-</li>
-                            
-<li >
-    <a href="../components/">Components</a>
-</li>
-                            
-<li >
-    <a href="../usages/">Usages</a>
-</li>
-                            
-<li >
-    <a href="../paintingmethods/">Painting Methods</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../baker/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../brushtextures/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-            </ul>
-        </div>
-    </div>
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Texture Smith Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
 </div>
+      </div>
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#texture-settings">Texture Settings</a></li>
-            <li><a href="#basecolor">BaseColor</a></li>
-            <li><a href="#normal">Normal</a></li>
-            <li><a href="#metal">Metal</a></li>
-            <li><a href="#height">Height</a></li>
-        <li class="main "><a href="#advanced-settings">Advanced Settings</a></li>
-            <li><a href="#fade">Fade</a></li>
-            <li><a href="#rotation">Rotation</a></li>
-            <li><a href="#tile-offset">Tile &amp; Offset</a></li>
-            <li><a href="#warp-experimental">Warp (Experimental)</a></li>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../gettingstarted/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Topics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../baker/">Baker</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Brush</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#targets">Targets</a></li>
+    
+
+    <li class="toctree-l3"><a href="#textures">Textures</a></li>
+    
+
+    <li class="toctree-l3"><a href="#uv">UV</a></li>
+    
+
+    <li class="toctree-l3"><a href="#mask">Mask</a></li>
+    
+
+    <li class="toctree-l3"><a href="#settings">Settings</a></li>
+    
+
+    <li class="toctree-l3"><a href="#brush-api">Brush API</a></li>
+    
+
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+                </li>
+                <li class="">
+                    
+    <a class="" href="../outputs/">Outputs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uses/">Uses</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Brushes</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../texturesettings/">Texture Settings</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uvsettings/">UV Settings</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../brushtextures/">BrushTextures</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../paintingmethods/">Painting Methods</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
 
-<h1 id="texture-settings">Texture Settings</h1>
-<p>Check <a href="../usages">here</a> to see which usages Texture Smith has the most support for.</p>
-<h3 id="basecolor">BaseColor</h3>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Texture Smith Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Topics &raquo;</li>
+        
+      
+    
+    <li>Brush</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="targets">Targets</h2>
+<p>Submeshes available to paint to. If there are none, your scene needs a <b>Baker</b> component. Read <a href="../gettingstarted">Getting Started</a> for info.</p>
+<h2 id="textures">Textures</h2>
+<p>Texture settings like tint color and normal strength. If there are no textures you need a <a href="../brushtextures">BrushTexture</a> component.</p>
+<h2 id="uv">UV</h2>
+<p>UV transform settings. More info <a href="../uvsettings">here</a>.</p>
+<h2 id="mask">Mask</h2>
+<p>Brush mask. Requires <b>Mask Blending</b> to be enabled in one of the targeted <b>Bakers</b>. More info <a href="../masks">here</a>.</p>
+<h2 id="settings">Settings</h2>
 <ul>
-<li><b>Tint &amp; Alpha:</b> Modify the colors/alpha.</li>
-<li><b>Multiply RGB:</b> Blend RGB with underlying color.</li>
-<li><b>Multiply A:</b> Blend alpha with underlying alpha. Good for semi transparent textures.</li>
-</ul>
-<h3 id="normal">Normal</h3>
-<ul>
-<li><b>Rotation Mode:</b><ul>
-<li><b>Auto (default):</b> Automatically rotates normals based on brush rotation.</li>
-<li><b>Static:</b> No rotation.</li>
-</ul>
-</li>
-<li><b>Rotation:</b> An offset.</li>
-<li><b>Invert (Button):</b> Adds PI to the current normal rotation. Gives an 'inverted' effect.</li>
-<li><b>Strength:</b> Increase the normal power.</li>
-<li><b>Blend:</b> How much to blend with underlying normals.</li>
-</ul>
-<h3 id="metal">Metal</h3>
-<ul>
-<li><b>Metallic:</b> How metallic (reflective) the surface is.</li>
-<li><b>Metallic Blend:</b> How much to blend with underlying metallic.</li>
-<li><b>Smoothness:</b> The glossiness/roughness.</li>
-<li><b>Smoothness Blend:</b> How much to blend with underlying smoothnrdd.</li>
-</ul>
-<h3 id="height">Height</h3>
-<ul>
-<li><b>Offset:</b> Increases or decreases the height.</li>
-<li><b>Depth:</b> How it blends with the underlying height.</li>
-</ul>
-<h1 id="advanced-settings">Advanced Settings</h1>
-<ul>
-<li><b>Priority:</b> Brushes are sorted on this before baking, so you can use it to render a Brush below/above others.</li>
-<li><b>Method:</b> How the texture is painted.<ul>
-<li><b>Projection (default):</b> Works like an orthographic projector in Unity. Just aim and size.</li>
-<li><b>UV:</b> Select a UV boundary to paint in. More info <a href="../uvmethod">here</a>.</li>
+<li><b>Priority:</b> Used to sort brushes before painting. Change it to put the brush above/below others.</li>
+<li><b>Method:</b> How the texture is painted. More info <a href="../paintingmethods">here</a>.<ul>
+<li><b>Projection (default):</b> Works similar to the orthographic projector in Unity. Just aim and resize.</li>
+<li><b>UV:</b> Select a UV rectangle to paint in.</li>
 <li><b>Distance:</b> Paints based on distance to mesh.</li>
 </ul>
 </li>
-<li><b>Space:</b> The UV Space.<ul>
-<li><b>Brush (default):</b> Based on brush position and scale.</li>
-<li><b>World:</b> Based on world position of brush.</li>
-<li><b>Vertex:</b> Based on position of vertex. (Good for painting.)</li>
-<li><b>UV:</b> Uses meshes UV. (Good for creating eraser effects.)</li>
+<li><b>Max Angle:</b> Limit painting based on the brushes angle and the normal of the mesh. Good for snow/dust effects, or just making sure you only paint faces that are facing the brush.</li>
+<li><b>Angle Fade:</b> If <b>Max Angle</b> less than 1 this will fade it. (Beta.)</li>
 </ul>
-</li>
-<li><b>Roundness:</b> Rounds corners of the brush.</li>
-</ul>
-<h3 id="fade">Fade</h3>
-<ul>
-<li><b>Edge Fade: Fades out the edges of the brush.</b></li>
-<li><b>Depth Fade: Fade based on distance from brush.</b></li>
-<li><b>Max Angle: Use mesh normals and brush rotation to clamp to a specific angle. Good for creating dust/snow effects.</b></li>
-<li><b>Angle Fade: Fade based on angle of normal from brush.</b></li>
-</ul>
-<h3 id="rotation">Rotation</h3>
-<p>An offset to the brush's rotation. Mostly added for when working with the UV Method.</p>
-<h3 id="tile-offset">Tile &amp; Offset</h3>
-<p>Texture Smith will ignore a textures built in wrap mode and does it manually.</p>
-<ul>
-<li><b>Wrap Mode:</b><ul>
-<li><b>Clamp:</b> Clamp.</li>
-<li><b>Repeat (default):</b> Tile effect.</li>
-<li><b>Mirror:</b> Mirrors the tile every 2nd time.</li>
-</ul>
-</li>
-</ul>
-<h3 id="warp-experimental">Warp (Experimental)</h3>
-<p>Settings for pinching and warping the UV. Primarilly designed for Brush Space with the Projection Method.</p></div>
-        </div>
+<h2 id="brush-api">Brush API</h2>
+<pre><code class="c#">AddTarget(submeshName);     // Target the first submesh found with the given name.
+RemoveTarget(submeshName);  // Stop targeting first submesh found with the given name.
+IsTargeting(submeshName);   // Returns true if brush is targeting.
+RemoveAllTargets();
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+// If the Brush's BrushTextures component has multiple textures, these methods can swap them.
+NextStyle();
+PreviousStyle();
+SelectStyle(styleIndex);
+SelectStyle(styleName);
+</code></pre>
+              
             </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../outputs/" class="btn btn-neutral float-right" title="Outputs">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../baker/" class="btn btn-neutral" title="Baker"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
     </div>
-</div>
+  
 
-    </body>
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../baker/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../outputs/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
 </html>

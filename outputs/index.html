@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Outputs - Texture Smith Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Outputs";
+    var mkdocs_page_input_path = "outputs.md";
+    var mkdocs_page_url = "/outputs/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Texture Smith Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../gettingstarted/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Topics</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../baker/">Baker</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../brush/">Brush</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Outputs</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#enabledisable">Enable/Disable</a></li>
+    
+
+    <li class="toctree-l3"><a href="#usage">Usage</a></li>
+    
+
+    <li class="toctree-l3"><a href="#remove">Remove</a></li>
+    
+
+    <li class="toctree-l3"><a href="#input-texture">Input Texture</a></li>
+    
+
+    <li class="toctree-l3"><a href="#size">Size</a></li>
+    
+
+    <li class="toctree-l3"><a href="#clear">Clear</a></li>
+    
+
+    <li class="toctree-l3"><a href="#post-processing">Post Processing</a></li>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uses/">Uses</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Brushes</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../texturesettings/">Texture Settings</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uvsettings/">UV Settings</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../brushtextures/">BrushTextures</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../paintingmethods/">Painting Methods</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Texture Smith Docs</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Topics &raquo;</li>
+        
+      
+    
+    <li>Outputs</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><b>Outputs</b> are the textures that get created and applied to your materials.</p>
+<h2 id="enabledisable">Enable/Disable</h2>
+<p>When calling baker.Bake(), all enabled outputs will be painted to. Disable this to prevent any more changes.
+<br>
+<img alt="Screenshot" src="../img/outputs/outputs_enable.png" />
+<br></p>
+<h2 id="usage">Usage</h2>
+<p>How this texture should be used by <b>Materials</b>. For more info on usages click <a href="../usage">here</a>.
+<br>
+<img alt="Screenshot" src="../img/outputs/outputs_usage.png" />
+<br></p>
+<h2 id="remove">Remove</h2>
+<p>Remove this output.
+<br>
+<img alt="Screenshot" src="../img/outputs/outputs_remove.png" />
+<br></p>
+<h2 id="input-texture">Input Texture</h2>
+<p>The base input texture that will be painted to. It will initialize with a texture from the <b>BakerMaterial</b>, though you can change it if you like.
+<br>
+<img alt="Screenshot" src="../img/outputs/outputs_input.png" />
+<br></p>
+<h2 id="size">Size</h2>
+<p>By default outputs will use the <b>Default texture size</b>, but you can change this for individual textures. Smaller textures generate faster, so you may like to downsize while designing things, and then upsize before you export.
+<br>
+<img alt="Screenshot" src="../img/outputs/outputs_size.png" />
+<br></p>
+<h2 id="clear">Clear</h2>
+<p>When enabled this will reset the texture every time Bake is called. Disabling it will give you a paint like effect.
+<br>
+<img alt="Screenshot" src="../img/outputs/outputs_clear.png" />
+<br></p>
+<h2 id="post-processing">Post Processing</h2>
+<p>A material used for processing the texture after all brushes have been painted to it. Post processing isn't mandatory, though it does fix seams and fills in blank space with the input texture. For Normal maps it will pack the normals, so if you are using Standard shaders this should be enabled.
+<br>
+<img alt="Screenshot" src="../img/outputs/outputs_postprocessing.png" />
+<br></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../uses/" class="btn btn-neutral float-right" title="Uses">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../brush/" class="btn btn-neutral" title="Brush"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../brush/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../uses/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>

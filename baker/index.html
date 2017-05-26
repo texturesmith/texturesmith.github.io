@@ -1,245 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        
-        <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Baker - Texture Smith Docs</title>
-        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
-        <link href="../css/font-awesome-4.5.0.css" rel="stylesheet">
-        <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/highlight.css">
-        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-        <![endif]-->
-	
-	<script src="../js/jquery-1.10.2.min.js"></script>
-        <script src="../js/bootstrap-3.0.3.min.js"></script>
-        <script src="../js/highlight.pack.js"></script> 
-    </head>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Baker - Texture Smith Docs</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-    <body>
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Baker";
+    var mkdocs_page_input_path = "baker.md";
+    var mkdocs_page_url = "/baker/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
 
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+<body class="wy-body-for-nav" role="document">
 
-        <!-- Collapsed navigation -->
-        <div class="navbar-header">
-            <!-- Expander button -->
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="..">Texture Smith Docs</a>
-        </div>
+  <div class="wy-grid-for-nav">
 
-        <!-- Expanded navigation -->
-        <div class="navbar-collapse collapse">
-                <!-- Main navigation -->
-                <ul class="nav navbar-nav">
-                    <li >
-                        <a href="..">Home</a>
-                    </li>
-                    <li >
-                        <a href="../gettingstarted/">Getting Started</a>
-                    </li>
-                    <li class="dropdown active">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Topics <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            
-<li class="active">
-    <a href="./">Baker</a>
-</li>
-                            
-<li >
-    <a href="../brush/">Brush</a>
-</li>
-                            
-<li >
-    <a href="../brushtextures/">Brush Textures</a>
-</li>
-                            
-<li >
-    <a href="../components/">Components</a>
-</li>
-                            
-<li >
-    <a href="../usages/">Usages</a>
-</li>
-                            
-<li >
-    <a href="../paintingmethods/">Painting Methods</a>
-</li>
-                        </ul>
-                    </li>
-                </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
-                        <i class="fa fa-search"></i> Search
-                    </a>
-                </li>
-                    <li >
-                        <a rel="next" href="../gettingstarted/">
-                            <i class="fa fa-arrow-left"></i> Previous
-                        </a>
-                    </li>
-                    <li >
-                        <a rel="prev" href="../brush/">
-                            Next <i class="fa fa-arrow-right"></i>
-                        </a>
-                    </li>
-            </ul>
-        </div>
-    </div>
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Texture Smith Docs</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
 </div>
+      </div>
 
-        <div class="container">
-                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
-    <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#targets">Targets</a></li>
-        <li class="main "><a href="#outputs">Outputs</a></li>
-            <li><a href="#baking-api">Baking API</a></li>
-            <li><a href="#output-api">Output API</a></li>
-        <li class="main "><a href="#advanced-settings">Advanced Settings</a></li>
-            <li><a href="#region">Region</a></li>
-            <li><a href="#flipv">FlipV</a></li>
-            <li><a href="#wrapuv">WrapUV</a></li>
-            <li><a href="#height-blending">Height Blending</a></li>
-            <li><a href="#clear-before-bake">Clear Before Bake</a></li>
-            <li><a href="#always-bake">Always Bake</a></li>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../gettingstarted/">Getting Started</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Topics</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Baker</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#targets">Targets</a></li>
+    
+
+    <li class="toctree-l3"><a href="#outputs">Outputs</a></li>
+    
+
+    <li class="toctree-l3"><a href="#brushes">Brushes</a></li>
+    
+
+    <li class="toctree-l3"><a href="#settings">Settings</a></li>
+    
+
+    <li class="toctree-l3"><a href="#baking-api">Baking API</a></li>
+    
+
     </ul>
-</div></div>
-                <div class="col-md-9" role="main">
+                </li>
+                <li class="">
+                    
+    <a class="" href="../brush/">Brush</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../outputs/">Outputs</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uses/">Uses</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Brushes</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../texturesettings/">Texture Settings</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../uvsettings/">UV Settings</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../brushtextures/">BrushTextures</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../paintingmethods/">Painting Methods</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
 
-<h1 id="targets">Targets</h1>
-<p>The meshes you want to target, and the textures that will be modified.
-Get started <a href="../gettingstarted">here</a>.</p>
-<h1 id="outputs">Outputs</h1>
-<p>These are the textures that will be created or updated when Bake is called.
-To add one, open the outputs panel and in the top right select Add Output.
-When you select to target a texture in the Target panel, it will automatically add an output if one doesn't already exist.
-<img alt="Screenshot" src="../img/baker1.png" /></p>
-<h2 id="baking-api">Baking API</h2>
-<pre><code class="c#">// Will bake anything that is enabled.
-BakeAll();
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-// To bake some.
-Bake(UsageType.BaseColor, UsageType.Normal, UsageType.Metal);
-</code></pre>
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Texture Smith Docs</a>
+      </nav>
 
-<h2 id="output-api">Output API</h2>
-<pre><code class="c#">var o = GetOutput(UsageType.BaseColor);
-
-// If baker calls BakeAll, it will check this first.
-o.enabled = true;
-
-// Set a custom texture size.
-// The smaller the faster it will be to generate.
-// If you wanted to show live updates, you might set this low while the user is modifying things, then set it high when they are done.
-o.customSize = true;
-o.size = PowersOf2.p512;
-
-// Change post processing.
-// The default post processing fixes edge seams, and packs normals.
-o.postProcessingEnabled = true;
-o.postProcessing = Resource.Load&lt;Material&gt;(&quot;Texture Smith/Materials/PP Default&quot;);
-
-// The input texture.
-o.texture = Resources.Load&lt;Texture&gt;(&quot;Textures BaseColor&quot;);
-// You can also call:
-GetInputTex(UsageType.BaseColor);
-
-// The output texture. You shouldn't ever change this.
-var rt = o.outputTexture;
-// You can also just call:
-GetOutputTex(UsageType.BaseColor);
-// Since it's a renderTexture, if you want to be able to read it just call:
-var tex2D = o.outputTexture.ToTexture2D();
-
-</code></pre>
-
-<h1 id="advanced-settings">Advanced Settings</h1>
-<h2 id="region">Region</h2>
-<p>Regions are used to speed up baking very large textures. When a region is selected, only that area of the textures will be updated when Bake is called. This might not provide much of an advantage if your textures are small or you are only creating a few at a time. But if you are creating lots of 4k+ textures, it can save time.</p>
-<h3 id="editing-regions">Editing Regions</h3>
-<p>Click Add Region then click Edit to bring up the Region Editor.</p>
-<h4 id="top-sliders">Top Sliders</h4>
-<ul>
-<li><b>Gray:</b> Renders the area out of bounds as dark gray, so it's easier to see the region.</li>
-<li><b>Nib:</b> Edge nib size. Larger = easier to grab, smaller = easier to see what your doing.</li>
-</ul>
-<h4 id="controls">Controls</h4>
-<ul>
-<li><b>Mouse Wheel Click:</b> Grab the workspace.</li>
-<li><b>Mouse Wheel Zoom:</b> Zoom in and out.</li>
-<li><b>Left Click:</b> Grab an edge nib or the full bounds.</li>
-<li><b>Mouse Move:</b> Move the workspace or edge nib.</li>
-</ul>
-<p>Ideally you should set a name for the region.</p>
-<h3 id="using-regions">Using regions.</h3>
-<p>You must click Use to start using a region.</p>
-<p>Click Use Full to use the full region.</p>
-<p>In script:</p>
-<pre><code class="c#">// Set to region.
-SetRegion(regionName);
-
-// Reset.
-SetRegion();
-</code></pre>
-
-<h2 id="flipv">FlipV</h2>
-<p>Flips the textures upside down. This will likely be removed and done internally.</p>
-<h2 id="wrapuv">WrapUV</h2>
-<p>You can most likely leave this off and forget about it. I had one strange instance where someones mesh had uvs outside the 0-1 range. For rare instances like that, this will wrap the uv.</p>
-<h2 id="height-blending">Height Blending</h2>
-<p>Enable height blending. The Baker normally paints 14 brushes at a time, so if there are more than 14 brushes it will have to do multiple passes. With height blending enabled it can only render 6 brushes at a time, so may be slower if you are using lots of brushes at once.</p>
-<h2 id="clear-before-bake">Clear Before Bake</h2>
-<p>Clears outputs before each bake. Disable it to preserve textures.
-I'll soon add an option to do this per output.</p>
-<h2 id="always-bake">Always Bake</h2>
-<p>Will call Bake every update tick. Not ideal for large textures or if creating lots of textures.</p></div>
-        </div>
-
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script>var base_url = '..';</script>
-        <script data-main="../mkdocs/js/search.js" src="../mkdocs/js/require.js"></script>
-        <script src="../js/base.js"></script><div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
-            </div>
-            <div class="modal-body">
-                <p>
-                    From here you can search these documents. Enter
-                    your search terms below.
-                </p>
-                <form role="form">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Topics &raquo;</li>
+        
+      
+    
+    <li>Baker</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
 </div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="targets">Targets</h2>
+<p>The submeshes you want to target.
+Get started <a href="../gettingstarted">here</a>.</p>
+<h2 id="outputs">Outputs</h2>
+<p>The textures to output. More info <a href="../outputs">here</a>.</p>
+<h2 id="brushes">Brushes</h2>
+<p>List of brushes targeting submeshes in this <b>Baker</b>.</p>
+<h2 id="settings">Settings</h2>
+<p><b><u>Export Settings</b></u><br>
+Export settings deal with exporting all the textures. Covered in <a href="../gettingstarted">Getting Started</a>.</p>
+<p><b><u>Shader Features</b></u><br>
+<b>Mask Blending</b> enables the use of mask textures (enabled by default) and <b>Height Blending</b> enables the use of height blending textures (enabled by default). But they come at a small performance cost. With <b>Mask Blending</b> and <b>Height Blending</b> enabled, 4 brushes will be painted per pass. With only one enabled 7 brushes will be painted per pass, and with neither enabled 14 brushes will be painted per pass.</p>
+<p><b><u>Wrap UV</b></u><br>
+Just leave this disabled and ignore it. In a rare event a submesh might have uv's that are outside the normal 0-1 range. Enabling this will fix this, so textures can generate properly.</p>
+<p><b><u>On brush settings changed</b></u><br>
+When you modify brush settings or move a brush around it is nice to see the effects instantly, without having to click Bake all the time. Use this drop down to determine what you want to happen when brush changes are made.
+<br>
+<img alt="Screenshot" src="../img/baker/baker_settings.png" />
+<br></p>
+<h2 id="baking-api">Baking API</h2>
+<pre><code class="c#">Bake();                     // Bake all sets.
+Bake(BakeSet.BakeSet1);     // Just bake set 1.
 
-    </body>
+RevertTextures();   // Use the original input textures.
+RevertMaterials();  // Use the original materials. (Only necesarry if you are in preview mode.)
+Revert();           // Revert textures &amp; materials.
+UseBakedTextures(); // Use output textures.
+
+ClearAll();         // Mark textures to be cleared. The effect will only be visible after Bake is called.
+
+Export();                   // Will export everything to exportPath.
+Export(BakeSet.BakeSet1);   // Will export set 1.
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../brush/" class="btn btn-neutral float-right" title="Brush">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../gettingstarted/" class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../gettingstarted/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../brush/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
 </html>
