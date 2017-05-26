@@ -164,76 +164,7 @@
             <div class="section">
               
                 <h1 id="brush-textures">Brush Textures</h1>
-<p>There are a number of way to get textures for the brush, including using Procedural Materials and TextMesh Pro text.</p>
-<h3 id="brush-api">Brush API</h3>
-<pre><code class="C#">// If a brush has multiple styles, these methods will cycle through them.
-brush.NextStyle();
-brush.PreviousStyle();
-
-// If there is a style with this name it will be set.
-brush.SetStyle(styleName);
-</code></pre>
-
-<h2 id="bt_default">BT_Default</h2>
-<p>Explained in <a href="../gettingstarted">getting started</a>.
-Just click Add Texture and drop in your textures.
-Make sure they are marked for the appropriate usage.</p>
-<h2 id="bt_gradient">BT_Gradient</h2>
-<p>Creates gradient textures. Very simple but it has a lot of uses, for instance, quickly generating textures. Or fake shadows.</p>
-<pre><code class="c#">var g = GetComponent&lt;BT_Gradient&gt;();
-
-// Set the gradient.
-g.SetGradient(gradient, radial);
-</code></pre>
-
-<h2 id="bt_procmat">BT_ProcMat</h2>
-<p>Designed for Procedural Materials which I wrap in <a href="../procmat">ProcMat</a>.</p>
-<p>The brush will use the textures directly from the ProceduralMaterial, unless you choose to store them.</p>
-<p>Click RenderTexture to create copies of the procedural textures. Now you can have 2 brushes sharing the same ProceduralMaterial but still using different textures.</p>
-<p>Click Texture2D to create copies as texture2D. This is better when you are working in editor since Unity will wipe RenderTextures if you do things like save your scene or resize the inspector editor.</p>
-<p>During runtime it's probably better to store as RenderTexture since it's faster to copy to.</p>
-<pre><code class="c#">var pm = GetComponent&lt;BT_ProcMat&gt;();
-
-// List all property names.
-foreach(var name in pm.procMat.names)
-    Debug.Log(name);
-
-// You can modify procMat properties like:
-pm[&quot;$randomseed&quot;].asFloat = Random.value * 100f;
-// ProceduralMaterial seed and output size have easy access variables.
-pm.procMat.seed = Random.value * 100f;
-pm.procMat.size = PowersOf2.p256;
-// To rebuild asynchonously:
-pm.procMat.RebuildTextures();
-// Or instantly.
-pm.procMat.RebuildTextures(true);
-</code></pre>
-
-<h2 id="bt_share">BT_Share</h2>
-<p>This just uses the textures from another brush. So it saves on texture memory but you can still customize it with the regular brush options, like tint, alpha, offset.</p>
-<h2 id="bt_textureset">BT_TextureSet</h2>
-<p>This takes one or more <a href="../textureset">TextureSet</a>s.</p>
-<h2 id="bt_text-requires-textmesh-pro">BT_Text (Requires TextMesh Pro)</h2>
-<p>Lets you create brushes from text. Use it to generate sports jersey names at runtime, or license plate numbers, or use dingbat fonts for easy tattoos, splats, signs. It's really fun to play around with. TMPros filter effects like glow &amp; bevel work great too.</p>
-<p>TextMesh Pro is free now, and Unity will be officially supporting it soon.</p>
-<h3 id="setup">Setup</h3>
-<ul>
-<li>Install TextMesh Pro.</li>
-<li>Go to <b>Editor &gt; Project Settings &gt; Player</b> and in <b>Script Define Symbols</b> add <b>TEXTMESHPRO</b>.</li>
-<li>Create a brush and add the BT_Text component and a TextMesh Pro component.</li>
-<li>Enter some text.</li>
-<li>Set the resolution (the width of the texture) higher = better quality = more memory.</li>
-<li>Hit <b>Generate</b>.</li>
-</ul>
-<h3 id="api">API</h3>
-<pre><code class="c#">var t = GetComponent&lt;BT_Text&gt;();
-
-// To set text.
-t.SetText(&quot;your text&quot;);
-</code></pre>
-              
-            </div>
-          </div>
+coming soon...
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
